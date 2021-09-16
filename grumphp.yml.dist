@@ -1,0 +1,67 @@
+grumphp:
+  fixer:
+    enabled: true
+    fix_by_default: true
+  extensions:
+    - Space48\GrumPHPStylelintTask\Extension
+    - Dallask\GrumPHPPrettierTask\Extension
+  tasks:
+    eslint:
+      triggered_by: [js, jsx, ts, tsx, vue]
+      config: .eslintrc.json
+      whitelist_patterns:
+        - /^assets\/src\/js\/(.*)/
+      debug: true
+      format: ~
+      max_warnings: ~
+      no_eslintrc: false
+      quiet: false
+    git_commit_message:
+      allow_empty_message: false
+      enforce_capitalized_subject: true
+      enforce_no_subject_punctuations: false
+      enforce_no_subject_trailing_period: true
+      enforce_single_lined_subject: true
+      type_scope_conventions: [ ]
+      max_body_width: 512
+      max_subject_width: 120
+      matchers:
+        Must contain JIRA issue number (i.e. "DF-1001 | Fixed header component"): /^[A-Z]+-\d+ \| /
+      case_insensitive: true
+      multiline: true
+      additional_modifiers: ''
+    phpcs:
+      standard: Drupal
+      ignore_patterns:
+        - .github
+        - .gitlab
+        - bower_components
+        - node_modules
+        - vendor
+      triggered_by:
+        - php
+        - module
+        - inc
+        - install
+        - test
+        - profile
+        - theme
+    phpmd:
+      exclude: [ ]
+      report_format: text
+      ruleset: [ 'cleancode', 'codesize', 'naming' ]
+      triggered_by:
+        - php
+        - module
+        - inc
+        - install
+        - test
+        - profile
+        - theme
+    stylelint:
+      bin: "node_modules/.bin/stylelint"
+      triggered_by: ["css", "scss"]
+      max_warnings: 3
+    prettier:
+      bin: "node_modules/.bin/prettier"
+      triggered_by: [ "css", "scss" ]

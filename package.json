@@ -1,0 +1,23 @@
+{
+  "name": "grumphp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "tetsfile.js",
+  "dependencies": {},
+  "devDependencies": {
+    "eslint": "^7.32.0",
+    "prettier": "2.4.1",
+    "stylelint": "^13.13.1",
+    "stylelint-config-standard": "^22.0.0"
+  },
+  "scripts": {
+    "sasslint": "stylelint '**/*.scss'",
+    "sasslint:fix": "stylelint '**/*.scss' --fix",
+    "prettier": "prettier '**/*' --check",
+    "prettier:fix": "prettier '**/*' --write",
+    "eslint": "eslint '**/*.js'",
+    "eslint:fix": "eslint '**/*.js' --fix"
+  },
+  "author": "",
+  "license": "ISC"
+}
