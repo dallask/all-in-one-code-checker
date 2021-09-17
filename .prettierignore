@@ -1,9 +1,0 @@
-# Ignore artifacts:
-.github
-.idea
-config
-vendor
-node_modules
-build
-coverage
-./.github/workflows/**/*.yml
