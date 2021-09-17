@@ -1,5 +1,5 @@
 {
-    "name": "oapi-Commercial-it/all-in-one-code-checker",
+    "name": "oapi-commercial-it/all-in-one-code-checker",
     "require": {
         "dealerdirect/phpcodesniffer-composer-installer": "^0.7.1",
         "drupal/coder": "^8.3",
