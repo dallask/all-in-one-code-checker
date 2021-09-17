@@ -10,21 +10,37 @@ Provides set of libraries to easily setup code quality checks based on [GrumPHP]
 
 ## Install
 
-1. Add all dependencies to `composer.json`
-Add repo as 
+1. Add repo to `composer.json` as 
 
-`"repositories": [{
+```
+"repositories": [{
      "type": "vcs",
      "url": "git@github.com:OAPI-Commercial-IT/all-in-one-code-checker.git"
- }]`
+ }]
+```
+ 
+1. Run `composer require oapi-commercial-it/all-in-one-code-checker`
  
 1. Copy `grumphp.yml` in project's root directory (not Drupal root directory) with `grumphp.yml.dist`
 
 1. Adjust config in `grumphp.yml`
 
-1. Run `composer install`
+1. Run `npm init` (optional)
 
-1. Run `npm install`
+1. Run `npm install dallask-all-in-one-code-checker`
+
+1. If you do not see needed scripts in your package.json file, just copy them from file: ./node_modules/dallask-all-in-one-code-checker/package.json
+
+```
+"scripts": {
+     "stylelint": "stylelint '**/*.scss'",
+     "stylelint:fix": "stylelint '**/*.scss' --fix",
+     "prettier": "prettier '**/*' --check",
+     "prettier:fix": "prettier '**/*' --write",
+     "eslint": "eslint '**/*.js'",
+     "eslint:fix": "eslint '**/*.js' --fix"
+   }
+```
 
 That's it. Now, all tasks (listed below) run on every `git commit`.
 
