@@ -18,13 +18,13 @@ Add repo as
      "url": "git@github.com:OAPI-Commercial-IT/all-in-one-code-checker.git"
  }]`
  
-2. Copy `grumphp.yml` in project's root directory (not Drupal root directory) with `grumphp.yml.dist`
+1. Copy `grumphp.yml` in project's root directory (not Drupal root directory) with `grumphp.yml.dist`
 
-3. Adjust config in `grumphp.yml`
+1. Adjust config in `grumphp.yml`
 
-4. Copy all needed files and configs from root directory (`package.json`, `package-lock.json`, `.eslintrc.js`, etc.) to your root
+1. Run `composer install`
 
-5. Run `composer install`
+1. Run `npm install`
 
 That's it. Now, all tasks (listed below) run on every `git commit`.
 
