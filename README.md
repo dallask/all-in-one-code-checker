@@ -10,16 +10,7 @@ Provides set of libraries to easily setup code quality checks based on [GrumPHP]
 
 ## Install
 
-1. Add repo to `composer.json` as 
-
-```
-"repositories": [{
-     "type": "vcs",
-     "url": "git@github.com:OAPI-Commercial-IT/all-in-one-code-checker.git"
- }]
-```
- 
-1. Run `composer require oapi-commercial-it/all-in-one-code-checker`
+1. Run `composer require dallask/all-in-one-code-checker`
  
 1. Copy `grumphp.yml` in project's root directory (not Drupal root directory) with `grumphp.yml.dist`
 
@@ -73,4 +64,5 @@ You can use next scripts to check and fix your files:
 
 ## Usage
 
-To start from CLI use `./vendor/bin/grumphp run`. It will check only files added by `git add`.
+* To start from CLI use `./vendor/bin/grumphp run`. It will check only files added by `git add`.
+* Just follow [GrumPHP](https://github.com/phpro/grumphp) documentation
