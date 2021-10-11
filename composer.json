@@ -16,5 +16,30 @@
             "email": "Ievgen_Kyvgyla@epam.com"
         }
     ],
-    "require-dev": {}
+    "require-dev": {},
+    "scripts": {
+        "post-install-cmd": [
+            "npm install"
+        ],
+        "post-update-cmd": [
+            "npm install"
+        ],
+        "grumphp": "./vendor/bin/grumphp run",
+        "phpcs:total": "./vendor/bin/phpcs --standard=Drupal --extensions=php,module,inc,install,test,profile .",
+        "phpcs:current": "./vendor/bin/phpcs --standard=Drupal --extensions=php,module,inc,install,test,profile $(git diff --name-status | grep -v \"^[RD]\" | awk '{ print $2 }')",
+        "phpcs:total:fix": "./vendor/bin/phpcbf --standard=Drupal --extensions=php,module,inc,install,test,profile .",
+        "phpcs:current:fix": "./vendor/bin/phpcbf --standard=Drupal --extensions=php,module,inc,install,test,profile $(git diff --name-status | grep -v \"^[RD]\" | awk '{ print $2 }')",
+        "stylelint:total": "./node_modules/.bin/stylelint '**/*.scss'",
+        "stylelint:current": "./node_modules/.bin/stylelint $(git diff --name-status | grep '\\.scss$' | grep -v \"^[RD]\" | awk '{ print $2 }')",
+        "stylelint:total:fix": "./node_modules/.bin/stylelint '**/*.scss' --fix",
+        "stylelint:current:fix": "./node_modules/.bin/stylelint --fix $(git diff --name-status | grep '\\.scss$' | grep -v \"^[RD]\" | awk '{ print $2 }')",
+        "prettier:total": "./node_modules/.bin/prettier '**/*' --check",
+        "prettier:current": "./node_modules/.bin/prettier --check $(git diff --name-status | grep '\\.scss$\\|\\.js$' | grep -v \"^[RD]\" | awk '{ print $2 }')",
+        "prettier:total:fix": "./node_modules/.bin/prettier '**/*' --write",
+        "prettier:current:fix": "./node_modules/.bin/prettier --write $(git diff --name-status | grep '\\.scss$\\|\\.js$' | grep -v \"^[RD]\" | awk '{ print $2 }')",
+        "eslint:total": "./node_modules/.bin/eslint '**/*.js'",
+        "eslint:current": "./node_modules/.bin/eslint $(git diff --name-status | grep '\\.js$' | grep -v \"^[RD]\" | awk '{ print $2 }')",
+        "eslint:total:fix": "./node_modules/.bin/eslint '**/*.js' --fix",
+        "eslint:current:fix": "./node_modules/.bin/eslint --fix $(git diff --name-status | grep '\\.js$' | grep -v \"^[RD]\" | awk '{ print $2 }')"
+    }
 }
